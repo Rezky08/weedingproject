@@ -287,6 +287,9 @@ module.exports = {
         '"Courier New"',
         "monospace",
       ],
+      title: ["Sacramento"],
+      contentTitle: ['"Patrick Hand"'],
+      content: ["Montserrat"],
     },
     fontSize: {
       xs: ["0.75rem", { lineHeight: "1rem" }],

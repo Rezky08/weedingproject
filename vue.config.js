@@ -4,7 +4,7 @@ module.exports = {
       locale: "en",
       fallbackLocale: "id",
       localeDir: "locales",
-      enableLegacy: false,
+      enableLegacy: true,
       runtimeOnly: false,
       compositionOnly: true,
       fullInstall: true,

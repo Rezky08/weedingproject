@@ -2,4 +2,20 @@
 
 @tailwind components;
 
+@font-face {
+  font-family: "Sacramento";
+  src: local("Sacramento"), url("./fonts/Sacramento-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Patrick Hand";
+  src: local("Patrick Hand"),
+    url("./fonts/PatrickHand-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: local("Montserrat"), url("./fonts/Montserrat-Medium.ttf") format("ttf");
+}
+
 @tailwind utilities;

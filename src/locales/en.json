@@ -1,5 +1,6 @@
 {
-  "home": {
-    "welcome": "hello from {name} !!"
-  }
+  "header": {
+    "title": "Wedding"
+  },
+  "greeting": "Hello"
 }
