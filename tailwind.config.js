@@ -1,6 +1,7 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
+  important: true,
   purge: { content: ["./public/**/*.html", "./src/**/*.vue"] },
   presets: [],
   darkMode: false, // or 'media' or 'class'
@@ -27,8 +28,10 @@ module.exports = {
       purple: colors.violet,
       pink: colors.pink,
 
-      primary: colors.emerald[600],
-      secondary: colors.emerald[300],
+      // primary: colors.emerald[600],
+      primary: "#56AE96",
+      secondary: "#98DDCA",
+      // secondary: colors.emerald[300],
     },
     spacing: {
       px: "1px",
@@ -216,7 +219,13 @@ module.exports = {
       "2xl": "0 25px 25px rgba(0, 0, 0, 0.15)",
       none: "0 0 #0000",
     },
-    fill: { current: "currentColor" },
+
+    // fill: { current: "currentColor" },
+    fill: (theme) => ({
+      current: "currentColor",
+      primary: theme("colors.primary"),
+      secondary: theme("colors.secondary"),
+    }),
     grayscale: {
       0: "0",
       DEFAULT: "100%",

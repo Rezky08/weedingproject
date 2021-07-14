@@ -1,5 +1,10 @@
 <template>
-  <component :is="component" :height="size" :width="size"></component>
+  <component
+    :is="component"
+    :height="size"
+    :width="size"
+    :class="classes"
+  ></component>
 </template>
 <script>
 export default {
@@ -9,6 +14,9 @@ export default {
     },
     size: {
       default: "2rem",
+    },
+    classes: {
+      default: "fill-current",
     },
   },
 };

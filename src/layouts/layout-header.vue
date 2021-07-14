@@ -13,7 +13,16 @@
 
         <span v-html="welcome"> </span>
 
-        <el-avatar></el-avatar>
+        <el-avatar
+          size="large"
+          class="border-2 border-primary bg-transparent shadow-md"
+        >
+          <svg-icon
+            :component="GroomIcon"
+            size="2.3rem"
+            classes="fill-primary"
+          />
+        </el-avatar>
       </el-space>
     </el-col>
   </el-row>
@@ -21,7 +30,7 @@
 
 <script>
 import svgIcon from "../components/svg-icon.vue";
-import { BellIcon } from "../assets/icons/wedding";
+import { BellIcon, GroomIcon } from "../assets/icons/wedding";
 // import { capitalizeFirstLetter } from "../functions";
 export default {
   components: { svgIcon },
@@ -33,6 +42,7 @@ export default {
   data() {
     return {
       BellIcon,
+      GroomIcon,
     };
   },
 };
