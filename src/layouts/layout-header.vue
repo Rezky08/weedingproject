@@ -5,7 +5,7 @@
         {{ $t("header.title") }}
       </span>
     </el-col>
-    <el-col :span="6" class="font-contentTitle text-xl text-right">
+    <el-col :span="12" class="font-contentTitle text-xl text-right">
       <el-space size="large">
         <el-badge :value="12">
           <svg-icon :component="BellIcon" />
