@@ -1,0 +1,7 @@
+.el-badge {
+  &__content {
+    &--primary {
+      background-color: theme("colors.primary") !important;
+    }
+  }
+}
