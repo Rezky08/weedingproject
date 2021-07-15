@@ -2,5 +2,11 @@
   "header": {
     "title": "Nikah"
   },
-  "greeting": "Halo"
+  "greeting": "Halo",
+  "menu": {
+    "customer": "pelanggan",
+    "order": "pesanan",
+    "invitation": "undangan ",
+    "partnership": "kemitraan"
+  }
 }

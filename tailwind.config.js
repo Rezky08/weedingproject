@@ -222,6 +222,7 @@ module.exports = {
 
     // fill: { current: "currentColor" },
     fill: (theme) => ({
+      white: theme("colors.white"),
       current: "currentColor",
       primary: theme("colors.primary"),
       secondary: theme("colors.secondary"),

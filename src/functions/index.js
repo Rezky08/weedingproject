@@ -1,3 +1,6 @@
-import { capitalizeFirstLetter } from "./textTransform";
+import {
+  capitalizeFirstLetter,
+  capitalizeEachFirstLetter,
+} from "./textTransform";
 
-export { capitalizeFirstLetter };
+export { capitalizeFirstLetter, capitalizeEachFirstLetter };
