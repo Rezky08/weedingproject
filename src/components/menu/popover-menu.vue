@@ -17,40 +17,13 @@
 import SvgIcon from "../svg-icon.vue";
 import customMenu from "./custom-menu.vue";
 import { LoveIcon } from "../../assets/icons/wedding";
+import { defaultMenu } from "../../data/menu";
 export default {
   components: { customMenu, SvgIcon },
   data() {
     return {
       LoveIcon,
-      menus: [
-        {
-          key: "guide",
-          url: "guide",
-          title: "Guide",
-          children: [
-            {
-              key: "inner",
-              url: "guide",
-              title: "inner Guide",
-              children: [
-                {
-                  key: "guide",
-                  url: "guide",
-                  title: "Guide",
-                  children: [
-                    {
-                      key: "inner",
-                      url: "guide",
-                      title: "inner Guide",
-                      children: [],
-                    },
-                  ],
-                },
-              ],
-            },
-          ],
-        },
-      ],
+      menus: defaultMenu,
     };
   },
   computed: {

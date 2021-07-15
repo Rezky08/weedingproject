@@ -7,6 +7,26 @@
     "customer": "pelanggan",
     "order": "pesanan",
     "invitation": "undangan ",
-    "partnership": "kemitraan"
+    "partnership": "kemitraan",
+    "popup": {
+      "customer": {
+        "title": "pelanggan"
+      },
+      "order": {
+        "title": "pesanan",
+        "payment": {
+          "title": "pembayaran"
+        },
+        "list": {
+          "title": "daftar orderan"
+        }
+      },
+      "invitation": {
+        "title": "undangan"
+      },
+      "partner": {
+        "title": "mitra"
+      }
+    }
   }
 }

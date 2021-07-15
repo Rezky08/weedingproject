@@ -1,9 +1,11 @@
 <template>
   <el-menu-item v-if="menu.children.length == 0" :index="menuKey">
-    {{ menu.title }}
+    {{ capitalizeEachFirstLetter($t(`menu.popup.${menuKey}.title`)) }}
   </el-menu-item>
   <el-submenu :index="menuKey" v-else-if="menu.children.length > 0">
-    <template #title>{{ menu.title }}</template>
+    <template #title>{{
+      capitalizeEachFirstLetter($t(`menu.popup.${menuKey}.title`))
+    }}</template>
     <custom-submenu
       v-for="child in menu.children"
       :menu="child"
@@ -13,6 +15,7 @@
   </el-submenu>
 </template>
 <script>
+import { capitalizeEachFirstLetter } from "../../functions";
 export default {
   functional: true,
   props: {
@@ -24,6 +27,9 @@ export default {
         return {};
       },
     },
+  },
+  methods: {
+    capitalizeEachFirstLetter,
   },
 };
 </script>
