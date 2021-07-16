@@ -20,7 +20,16 @@
         @click="triggered"
         :class="['p-2', 'w-full', 'cursor-pointer', isActive ? 'is-active' : null]"
       >
-        <span>{{ capitalizeEachFirstLetter($t(`menu.popup.${menuKey}.title`)) }}</span>
+        <el-row align="middle">
+          <el-col :span="22">
+            <span>{{
+              capitalizeEachFirstLetter($t(`menu.popup.${menuKey}.title`))
+            }}</span>
+          </el-col>
+          <el-col :span="2">
+            <svg-icon :component="RightArrowAngleIcon" size="0.8rem" />
+          </el-col>
+        </el-row>
       </div>
     </template>
     <el-space
@@ -44,7 +53,11 @@
 </template>
 <script>
 import { capitalizeEachFirstLetter } from "../../functions";
+import { RightArrowAngleIcon } from "../../assets/icons/line";
+import svgIcon from "../svg-icon.vue";
+
 export default {
+  components: { svgIcon },
   functional: true,
   emits: ["opened", "selected"],
   props: {
@@ -72,6 +85,7 @@ export default {
   },
   data() {
     return {
+      RightArrowAngleIcon,
       trigger: "manual",
       visible: false,
     };
