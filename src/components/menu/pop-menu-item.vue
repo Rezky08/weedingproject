@@ -9,7 +9,7 @@
   <el-popover
     v-else-if="menu.children.length > 0"
     placement="right-end"
-    popper-class="pop-menu rounded-xl"
+    popper-class="pop-menu rounded-xl font-contentTitle text-lg"
     :trigger="trigger"
     v-model:visible="visible"
     @after-enter="opened"

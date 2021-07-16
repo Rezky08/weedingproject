@@ -3,7 +3,7 @@
     placement="top"
     trigger="manual"
     v-model:visible="visible"
-    popper-class="pop-menu rounded-xl"
+    popper-class="pop-menu rounded-xl font-contentTitle text-xl"
   >
     <template #reference>
       <span v-if="hasReference" @click="show">
