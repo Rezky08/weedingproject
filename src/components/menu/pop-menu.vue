@@ -9,7 +9,7 @@
       <span v-if="hasReference" @click="show">
         <slot name="reference"></slot>
       </span>
-      <el-button v-else circle class="bg-primary" @click="show">
+      <el-button v-else circle class="bg-primary pop-menu--trigger" @click="show">
         <svg-icon :component="LoveIcon" :classes="'fill-white'" />
       </el-button>
     </template>

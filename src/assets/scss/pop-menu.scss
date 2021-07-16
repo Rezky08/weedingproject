@@ -1,5 +1,11 @@
 .pop-menu {
   padding: unset !important;
+  &--trigger {
+    position: fixed;
+    bottom: 1rem;
+    left: 1rem;
+    z-index: 9000;
+  }
   &--items {
     .el-space {
       &__item {

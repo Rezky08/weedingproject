@@ -4,14 +4,12 @@
       <layout-header />
     </el-header>
     <el-main>
+      <pop-menu />
       <el-header>
         <span class="font-contentTitle text-3xl text-primary">Home</span>
       </el-header>
       <slot />
     </el-main>
-    <el-footer>
-      <pop-menu />
-    </el-footer>
   </el-container>
 </template>
 <script>
