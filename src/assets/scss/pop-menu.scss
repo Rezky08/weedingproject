@@ -1,0 +1,17 @@
+.pop-menu {
+  padding: unset !important;
+  &--items {
+    .el-space {
+      &__item {
+        &:nth-last-child(1) {
+          padding: unset !important;
+        }
+        width: 100%;
+      }
+    }
+    .is-active {
+      background-color: theme("colors.primary");
+      color: theme("colors.white");
+    }
+  }
+}

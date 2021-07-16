@@ -1,0 +1,124 @@
+<template>
+  <div
+    v-if="menu.children.length == 0"
+    @click="selected"
+    :class="['p-2', 'w-full', 'cursor-pointer', isActive ? 'is-active' : null]"
+  >
+    <span>{{ capitalizeEachFirstLetter($t(`menu.popup.${menuKey}.title`)) }}</span>
+  </div>
+  <el-popover
+    v-else-if="menu.children.length > 0"
+    placement="right-end"
+    popper-class="pop-menu rounded-xl"
+    :trigger="trigger"
+    v-model:visible="visible"
+    @after-enter="opened"
+    @after-leave="opened"
+  >
+    <template #reference>
+      <div
+        @click="triggered"
+        :class="['p-2', 'w-full', 'cursor-pointer', isActive ? 'is-active' : null]"
+      >
+        <span>{{ capitalizeEachFirstLetter($t(`menu.popup.${menuKey}.title`)) }}</span>
+      </div>
+    </template>
+    <el-space
+      direction="vertical"
+      class="w-full pop-menu--items rounded-xl overflow-hidden"
+      alignment="start"
+    >
+      <pop-menu-item
+        v-for="child in menu.children"
+        :parentVisible="visible"
+        :openedKeys="openedKeys"
+        :activeKeys="activeKeys"
+        :menu="child"
+        :menuKey="`${menuKey}.${child.key}`"
+        :key="`${menuKey}.${child.key}`"
+        @selected="selected"
+        @opened="opened"
+      />
+    </el-space>
+  </el-popover>
+</template>
+<script>
+import { capitalizeEachFirstLetter } from "../../functions";
+export default {
+  functional: true,
+  emits: ["opened", "selected"],
+  props: {
+    parentVisible: {
+      default: false,
+    },
+    openedKeys: {
+      default: () => {
+        return [];
+      },
+    },
+    activeKeys: {
+      default: () => {
+        return [];
+      },
+    },
+    menuKey: {
+      default: "",
+    },
+    menu: {
+      default: () => {
+        return {};
+      },
+    },
+  },
+  data() {
+    return {
+      trigger: "manual",
+      visible: false,
+    };
+  },
+  methods: {
+    capitalizeEachFirstLetter,
+    triggered() {
+      this.visible = !this.visible;
+      this.selected();
+    },
+
+    opened(value) {
+      this.$emit("opened", {
+        key: typeof value?.key == "string" ? value?.key : this.menuKey,
+        opened: value?.opened ?? this.visible,
+      });
+    },
+    selected(value) {
+      this.$emit("selected", {
+        key: typeof value?.key == "string" ? value?.key : this.menuKey,
+        selected: Array.isArray(value?.selected)
+          ? value?.selected?.concat([this.menuKey])
+          : [this.menuKey],
+      });
+    },
+  },
+  computed: {
+    isActive() {
+      return this.activeKeys.includes(this.menuKey);
+    },
+  },
+  watch: {
+    parentVisible: {
+      handler: function (value) {
+        if (!value) {
+          this.visible = value;
+        }
+      },
+    },
+    activeKeys: {
+      handler: function (value) {
+        if (this.menu?.children?.length > 0) {
+          this.visible = value.includes(this.menuKey);
+          this.opened();
+        }
+      },
+    },
+  },
+};
+</script>

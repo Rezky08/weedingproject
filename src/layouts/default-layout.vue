@@ -10,15 +10,15 @@
       <slot />
     </el-main>
     <el-footer>
-      <popover-menu />
+      <pop-menu />
     </el-footer>
   </el-container>
 </template>
 <script>
-import PopoverMenu from "../components/menu/popover-menu.vue";
+import PopMenu from "../components/menu/pop-menu.vue";
 
 import layoutHeader from "./layout-header.vue";
 export default {
-  components: { layoutHeader, PopoverMenu },
+  components: { layoutHeader, PopMenu },
 };
 </script>
