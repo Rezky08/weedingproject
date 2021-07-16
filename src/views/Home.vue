@@ -1,32 +1,23 @@
 <template>
   <default-layout>
-    <el-row :gutter="20" class="w-1/2 mx-auto">
-      <el-col :md="8">
-        <card-counter
-          :title="$tc('menu.customer', { count: 2 })"
-          :content="289"
-        />
+    <el-row :gutter="20" class="mx-auto sm:w-full md:w-1/2 gutter" justify="center">
+      <el-col :lg="8" :md="12" :sm="12" :xs="12">
+        <card-counter :title="$tc('menu.customer', { count: 2 })" :content="289" />
       </el-col>
-      <el-col :md="8">
+      <el-col :lg="8" :md="12" :sm="12" :xs="12">
         <card-counter :title="$tc('menu.order', { count: 2 })" :content="289" />
       </el-col>
-      <el-col :md="8">
-        <card-counter
-          :title="$tc('menu.invitation', { count: 2 })"
-          :content="289"
-        />
+      <el-col :lg="8" :md="12" :sm="12" :xs="12">
+        <card-counter :title="$tc('menu.invitation', { count: 2 })" :content="289" />
       </el-col>
     </el-row>
     <el-divider />
-    <el-row :gutter="20" class="w-1/2 mx-auto" justify="center">
-      <el-col :md="8">
+    <el-row :gutter="20" class="mx-auto sm:w-full md:w-1/2 gutter" justify="center">
+      <el-col :lg="8" :md="12" :sm="12" :xs="12">
         <card-button :title="$tc('menu.partnership')" :icon="WeddingIcon" />
       </el-col>
-      <el-col :md="8">
-        <card-button
-          :title="$tc('menu.invitation')"
-          :icon="WeddingInvitation1"
-        />
+      <el-col :lg="8" :md="12" :sm="12" :xs="12">
+        <card-button :title="$tc('menu.invitation')" :icon="WeddingInvitation1" />
       </el-col>
     </el-row>
   </default-layout>

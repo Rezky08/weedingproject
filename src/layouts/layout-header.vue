@@ -11,17 +11,10 @@
           <svg-icon :component="BellIcon" />
         </el-badge>
 
-        <span v-html="welcome"> </span>
+        <span v-html="welcome" class="hidden md:block"> </span>
 
-        <el-avatar
-          size="large"
-          class="border-2 border-primary bg-transparent shadow-md"
-        >
-          <svg-icon
-            :component="GroomIcon"
-            size="2.3rem"
-            classes="fill-primary"
-          />
+        <el-avatar size="large" class="border-2 border-primary bg-transparent shadow-md">
+          <svg-icon :component="GroomIcon" size="2.3rem" classes="fill-primary" />
         </el-avatar>
       </el-space>
     </el-col>

@@ -7,11 +7,20 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     screens: {
-      sm: "640px",
-      md: "768px",
-      lg: "1024px",
-      xl: "1280px",
-      "2xl": "1536px",
+      xs: "640px",
+      sm: "768px",
+      md: "992px",
+      lg: "1200px",
+      xl: "1920px",
+      "2xl": "2040px",
+      // tablet: "640px",
+      // // => @media (min-width: 640px) { ... }
+
+      // laptop: "1024px",
+      // // => @media (min-width: 1024px) { ... }
+
+      // desktop: "1280px",
+      // // => @media (min-width: 1280px) { ... }
     },
     colors: {
       transparent: "transparent",
