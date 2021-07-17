@@ -7,6 +7,7 @@ import {
   WeddingIcon,
   WeddingInvitation1,
 } from "./wedding";
+import { CheckedIcon } from "./general";
 
 export {
   RightArrowAngleIcon,
@@ -16,4 +17,5 @@ export {
   LoveIcon,
   WeddingIcon,
   WeddingInvitation1,
+  CheckedIcon,
 };

@@ -40,7 +40,7 @@ module.exports = {
       // primary: colors.emerald[600],
       primary: "#56AE96",
       secondary: "#FFF8F4",
-      // secondary: "#98DDCA",
+      "primary-light": "#98DDCA",
       // secondary: colors.emerald[300],
     },
     spacing: {
@@ -867,6 +867,11 @@ module.exports = {
     "disabled",
   ],
   variants: {
+    extend: {
+      backgroundColor: ["checked"],
+      borderColor: ["checked"],
+      appearance: ["hover", "focus"],
+    },
     accessibility: ["responsive", "focus-within", "focus"],
     alignContent: ["responsive"],
     alignItems: ["responsive"],

@@ -1,0 +1,29 @@
+.checkbox {
+  &--label {
+    cursor: pointer;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: theme("fontSize.lg");
+    width: theme("fontSize.lg");
+    background-color: theme("colors.transparent");
+    border: theme("borderWidth.DEFAULT") solid theme("colors.current");
+    border-radius: theme("borderRadius.md");
+    & > * {
+      display: none;
+    }
+  }
+  &--input {
+    display: none;
+    &:checked {
+      ~ .checkbox {
+        &--label {
+          background-color: theme("colors.current");
+          & > * {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

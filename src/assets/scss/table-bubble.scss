@@ -1,0 +1,14 @@
+.table-bubble {
+  .el-card {
+    &__body {
+      padding: theme("spacing.3");
+    }
+  }
+  &--items {
+    .el-space {
+      &__item {
+        width: theme("width.full");
+      }
+    }
+  }
+}

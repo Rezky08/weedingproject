@@ -20,7 +20,10 @@ export default {
   components: { layoutHeader, PopMenu },
   computed: {
     title() {
-      return capitalizeEachFirstLetter(this.$t(`route.${this.$route.name}.title`));
+      if (this.$route.name) {
+        return capitalizeEachFirstLetter(this.$t(`route.${this.$route.name}.title`));
+      }
+      return "";
     },
   },
 };
