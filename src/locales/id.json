@@ -28,5 +28,13 @@
         "title": "mitra"
       }
     }
+  },
+  "route": {
+    "Home": {
+      "title": "Beranda"
+    },
+    "Customer": {
+      "title": "Pelanggan"
+    }
   }
 }
