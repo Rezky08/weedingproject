@@ -1,0 +1,31 @@
+.el-pagination {
+  &.is-background {
+    .btn {
+      &-prev {
+        .el-icon {
+          font-size: theme("fontSize.base") !important;
+        }
+        border: theme("borderWidth.2") solid theme("colors.primary") !important;
+        background-color: theme("colors.transparent") !important;
+        color: theme("colors.primary") !important;
+      }
+      &-next {
+        .el-icon {
+          font-size: theme("fontSize.base") !important;
+        }
+        border: 1px solid theme("colors.primary") !important;
+        background-color: theme("colors.transparent") !important;
+        color: theme("colors.primary") !important;
+      }
+    }
+    .el-pager {
+      .number {
+        &.active {
+          color: theme("colors.secondary-dark") !important;
+        }
+        background-color: theme("colors.transparent") !important;
+        color: theme("colors.primary") !important;
+      }
+    }
+  }
+}

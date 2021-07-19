@@ -3,7 +3,7 @@
     <el-header>
       <layout-header />
     </el-header>
-    <el-main>
+    <el-main class="pb-20">
       <pop-menu />
       <el-header>
         <span class="font-contentTitle text-3xl text-primary">{{ title }}</span>

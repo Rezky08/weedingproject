@@ -40,6 +40,7 @@ module.exports = {
       // primary: colors.emerald[600],
       primary: "#56AE96",
       secondary: "#FFF8F4",
+      "secondary-dark": "#FFA7A7",
       "primary-light": "#98DDCA",
       // secondary: colors.emerald[300],
     },

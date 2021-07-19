@@ -12,6 +12,9 @@ const routes = [
     path: "/customer",
     name: "Customer",
     component: Customer,
+    props: {
+      defaultLayout: true,
+    },
   },
 ];
 
