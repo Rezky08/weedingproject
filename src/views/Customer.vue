@@ -6,11 +6,7 @@
       :dataSource="CustomersTableSimpleData"
     />
     <div class="text-right">
-      <el-pagination
-        background
-        layout="prev,pager,next,jumper"
-        :total="50"
-      ></el-pagination>
+      <el-pagination background layout="prev,pager,next" :total="50"></el-pagination>
     </div>
   </div>
 </template>
