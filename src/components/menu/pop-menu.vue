@@ -22,6 +22,7 @@
         :parentVisible="visible"
         :openedKeys="openedKeys"
         :activeKeys="activeKeys"
+        :activeKey="private_activeKey"
         v-for="menu in menus"
         :key="menu.key"
         :menu="menu"
@@ -40,13 +41,18 @@ import { defaultMenu } from "../../data/menu";
 
 export default {
   components: { SvgIcon, PopMenuItem },
+  props: {
+    active_key: {
+      default: "",
+    },
+  },
   data() {
     return {
       LoveIcon,
       menus: defaultMenu,
       visible: false,
       activeKeys: [],
-      activeKey: "",
+      private_activeKey: "",
       openedKeys: [],
     };
   },
@@ -61,7 +67,7 @@ export default {
     },
 
     selected(value) {
-      this.activeKey = value?.key;
+      this.private_activeKey = value?.key;
       this.activeKeys = value?.selected.reverse();
       this.openedKeys = this.openedKeys.filter((k) => this.activeKeys.includes(k));
     },
@@ -71,7 +77,18 @@ export default {
       } else if (value?.opened == true && !this.openedKeys.includes(value?.key)) {
         this.openedKeys.push(value?.key);
       }
-      console.log(this.openedKeys);
+    },
+  },
+  watch: {
+    active_key: {
+      handler: function (value) {
+        this.private_activeKey = value;
+      },
+    },
+    private_activeKey: {
+      handler: function (value) {
+        this.$emit("update:active_key", value);
+      },
     },
   },
 };

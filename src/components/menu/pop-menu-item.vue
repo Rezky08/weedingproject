@@ -1,11 +1,21 @@
 <template>
-  <div
-    v-if="menu.children.length == 0"
-    @click="selected"
-    :class="['p-2', 'w-full', 'cursor-pointer', isActive ? 'is-active' : null]"
-  >
-    <span>{{ capitalizeEachFirstLetter($t(`menu.popup.${menuKey}.title`)) }}</span>
-  </div>
+  <template v-if="menu.children.length == 0">
+    <router-link v-if="to" :to="to">
+      <div
+        @click="selected"
+        :class="['p-2', 'w-full', 'cursor-pointer', isActive ? 'is-active' : null]"
+      >
+        <span>{{ capitalizeEachFirstLetter($t(`menu.popup.${menuKey}.title`)) }}</span>
+      </div>
+    </router-link>
+    <div
+      v-else
+      @click="selected"
+      :class="['p-2', 'w-full', 'cursor-pointer', isActive ? 'is-active' : null]"
+    >
+      <span>{{ capitalizeEachFirstLetter($t(`menu.popup.${menuKey}.title`)) }}</span>
+    </div>
+  </template>
   <el-popover
     v-else-if="menu.children.length > 0"
     placement="right-end"
@@ -69,6 +79,9 @@ export default {
         return [];
       },
     },
+    activeKey: {
+      default: "",
+    },
     activeKeys: {
       default: () => {
         return [];
@@ -88,6 +101,7 @@ export default {
       RightArrowAngleIcon,
       trigger: "manual",
       visible: false,
+      to: {},
     };
   },
   methods: {
@@ -111,6 +125,23 @@ export default {
           : [this.menuKey],
       });
     },
+    setDestinationRoute() {
+      const to = this.menu?.to ?? {};
+      const route = to
+        ? this.$router.resolve(to)
+        : this.$router.resolve({ name: this.menuKey });
+      this.to = {
+        name: route?.name,
+      };
+      return {
+        name: route?.name,
+      };
+    },
+    setActiveKey() {
+      if (this.activeKey == this.menuKey) {
+        this.selected();
+      }
+    },
   },
   computed: {
     isActive() {
@@ -133,6 +164,15 @@ export default {
         }
       },
     },
+    activeKey: {
+      handler: function () {
+        this.setActiveKey();
+      },
+    },
+  },
+  mounted() {
+    this.setDestinationRoute();
+    this.setActiveKey();
   },
 };
 </script>

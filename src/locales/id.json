@@ -29,10 +29,10 @@
     }
   },
   "route": {
-    "Home": {
+    "home": {
       "title": "Beranda"
     },
-    "Customer": {
+    "customer": {
       "title": "Pelanggan"
     }
   },

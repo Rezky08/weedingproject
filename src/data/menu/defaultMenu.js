@@ -1,6 +1,9 @@
 const menu = [
   {
     key: "customer",
+    to: {
+      name: "customer",
+    },
     children: [],
   },
   {

@@ -5,12 +5,12 @@ import Customer from "../views/Customer.vue";
 const routes = [
   {
     path: "/",
-    name: "Home",
+    name: "home",
     component: Home,
   },
   {
     path: "/customer",
-    name: "Customer",
+    name: "customer",
     component: Customer,
     props: {
       defaultLayout: true,

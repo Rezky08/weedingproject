@@ -1,9 +1,11 @@
 <template>
   <el-row justify="space-between" align="middle" class="pt-3 text-primary">
     <el-col :span="12">
-      <span class="font-title text-5xl">
-        {{ $t("header.title") }}
-      </span>
+      <router-link to="/">
+        <span class="font-title text-5xl">
+          {{ $t("header.title") }}
+        </span>
+      </router-link>
     </el-col>
     <el-col :span="12" class="font-contentTitle text-xl text-right">
       <el-space size="large">
