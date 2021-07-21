@@ -41,5 +41,7 @@
   "email": "Email",
   "phone": "No Hp",
   "invitation": "Undangan",
-  "number": "No"
+  "number": "No",
+  "no": "tidak",
+  "yes": "ya"
 }

@@ -1,0 +1,20 @@
+.modal-confirmation {
+  &-no-title {
+    .el-dialog {
+      &__header {
+        display: none;
+      }
+    }
+  }
+  .el-dialog {
+    &__header {
+      .el-icon {
+        color: theme("colors.white");
+      }
+      background-color: theme("colors.secondary-dark");
+      color: theme("colors.white");
+      font-family: theme("fontFamily.contentTitle");
+      font-size: theme("fontSize.2xl");
+    }
+  }
+}
