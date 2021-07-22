@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Customer from "../views/Customer.vue";
+import Partner from "../views/Partner.vue";
 
 const routes = [
   {
@@ -12,9 +13,11 @@ const routes = [
     path: "/customer",
     name: "customer",
     component: Customer,
-    props: {
-      defaultLayout: true,
-    },
+  },
+  {
+    path: "/partner",
+    name: "partner",
+    component: Partner,
   },
 ];
 

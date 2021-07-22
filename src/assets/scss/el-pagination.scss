@@ -23,6 +23,7 @@
         &.active {
           color: theme("colors.secondary-dark") !important;
         }
+        font-family: theme("fontFamily.content") !important;
         background-color: theme("colors.transparent") !important;
         color: theme("colors.primary") !important;
       }

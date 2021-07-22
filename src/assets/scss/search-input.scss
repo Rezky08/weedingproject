@@ -1,0 +1,18 @@
+.search-input {
+  .el-input {
+    &__suffix {
+      color: theme("colors.primary") !important;
+    }
+    &__inner {
+      &,
+      &:hover,
+      &:active,
+      &:focus {
+        color: theme("colors.primary") !important;
+
+        border-width: theme("borderWidth.2");
+        border-color: theme("colors.current");
+      }
+    }
+  }
+}

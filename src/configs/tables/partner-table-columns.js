@@ -12,8 +12,12 @@ const columns = [
     dataIndex: "phone",
   },
   {
-    label: "invitation",
-    dataIndex: "invitation",
+    label: "type",
+    dataIndex: "type",
+  },
+  {
+    label: "ref",
+    dataIndex: "ref",
   },
   {
     label: "",

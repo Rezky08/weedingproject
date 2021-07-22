@@ -34,8 +34,16 @@
     },
     "customer": {
       "title": "Pelanggan"
+    },
+    "partner": {
+      "title": "Mitra"
     }
   },
+  "confirmations": {
+    "suspendAccount": "Apakah kamu akan mencabut akses {name} ?"
+  },
+  "customerSuspend": "cabut akses pelanggan",
+  "suspend": "cabut akses",
   "greeting": "Halo",
   "name": "Nama",
   "email": "Email",

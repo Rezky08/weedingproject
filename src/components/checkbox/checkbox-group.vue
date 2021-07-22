@@ -29,7 +29,6 @@ export default {
         node.checked = true;
         checked.push(node.value);
       });
-      console.log(checked);
       this.checkList = checked;
     },
     setCheckboxEvent() {
@@ -38,9 +37,7 @@ export default {
           if (node.checked == true) {
             this.checkList.push(node.value);
           } else if (node.checked == false) {
-            this.checkList = this.checkList.filter(
-              (value) => value != node.value
-            );
+            this.checkList = this.checkList.filter((value) => value != node.value);
           }
         });
       });
@@ -56,13 +53,13 @@ export default {
   },
   watch: {
     checkList: {
-      handler: function(value) {
+      handler: function (value) {
         this.$emit("update:modelValue", value);
       },
       deep: true,
     },
     checkAll: {
-      handler: function(value) {
+      handler: function (value) {
         if (value) {
           this.checkAllCheckbox();
         } else {

@@ -1,9 +1,7 @@
 <template>
   <div class="table-bubble">
     <el-affix target=".table-bubble" class="mb-4" :offset="60">
-      <el-card
-        class="rounded-2xl bg-primary-light text-white shadow-lg border-0"
-      >
+      <el-card class="rounded-2xl bg-primary-light text-white shadow-lg border-0">
         <el-row align="middle">
           <el-col
             v-if="withCheckbox"
@@ -35,11 +33,7 @@
       </el-card>
     </el-affix>
     <checkbox-group v-model="checkList" :checkAll="checkAll">
-      <el-space
-        direction="vertical"
-        size="large"
-        class="w-full table-bubble--items"
-      >
+      <el-space direction="vertical" size="large" class="w-full table-bubble--items">
         <el-card
           v-for="(item, itemIndex) in dataSource"
           :key="itemIndex"
@@ -69,24 +63,16 @@
                 "
                 :class="[column?.item?.class]"
               >
-                <slot
-                  :name="column.scopedSlots.customRender"
-                  :record="item"
-                ></slot>
+                <slot :name="column.scopedSlots.customRender" :record="item"></slot>
               </span>
               <!-- <div v-if="hasSlot(column.scopedSlot)">
           </div> -->
-              <span
-                v-else-if="column.customRender"
-                :class="[column?.item?.class]"
-              >
+              <span v-else-if="column.customRender" :class="[column?.item?.class]">
                 {{ displayCustomRender(column, item, itemIndex) }}
               </span>
-              <span
-                v-else-if="column.dataIndex"
-                :class="[column?.item?.class]"
-                >{{ resolve(column.dataIndex, item) }}</span
-              >
+              <span v-else-if="column.dataIndex" :class="[column?.item?.class]">{{
+                resolve(column.dataIndex, item)
+              }}</span>
               <span v-else :class="[column?.item?.class]">
                 {{ item }}
               </span>
@@ -144,9 +130,7 @@ export default {
   computed: {
     getOptionKey() {
       if (this.dataSource.length > 0) {
-        return this.resolve(this.optionKey, this.dataSource[0])
-          ? this.optionKey
-          : null;
+        return this.resolve(this.optionKey, this.dataSource[0]) ? this.optionKey : null;
       } else {
         return null;
       }
@@ -157,7 +141,7 @@ export default {
       return !!this.$slots[slotName];
     },
     resolve(path, obj) {
-      return path?.split(".").reduce(function(prev, curr) {
+      return path?.split(".").reduce(function (prev, curr) {
         return prev ? prev[curr] : null;
       }, obj || self);
     },
@@ -171,9 +155,7 @@ export default {
     },
     setDefaultSpan() {
       const columnsWithoutColspan = this.columns.filter((o) => !o.colspan);
-      this.defaultSpan = Math.floor(
-        this.maxColumn / (columnsWithoutColspan.length ?? 1)
-      );
+      this.defaultSpan = Math.floor(this.maxColumn / (columnsWithoutColspan.length ?? 1));
     },
 
     setOptions() {
@@ -194,28 +176,13 @@ export default {
       let text = column?.dataIndex ? this.resolve(column.dataIndex, row) : "";
       let result = column?.customRender(text, row, index);
       const { children } = result;
-      return (children && children != "") || children != undefined
-        ? children
-        : result;
+      return (children && children != "") || children != undefined ? children : result;
     },
   },
   mounted() {
     this.setColspan();
     this.setDefaultSpan();
     this.setOptions();
-  },
-  watch: {
-    checkAll: {
-      handler: function(value) {
-        console.log(value, "checkAll");
-      },
-    },
-    checkList: {
-      handler: function(value) {
-        console.log(value, "Checklist");
-      },
-      deep: true,
-    },
   },
 };
 </script>

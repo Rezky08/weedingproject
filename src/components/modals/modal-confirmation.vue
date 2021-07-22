@@ -13,10 +13,15 @@
             <slot></slot>
           </div>
         </el-main>
-        <el-footer>
+        <el-footer class="text-right">
           <el-space>
             <w-button size="small" type="secondary" :round="true" @click="ok">
-              <span>{{ capitalizeEachFirstLetter($t("yes")) }}</span>
+              <span v-if="!hasSlot('ok')">{{
+                capitalizeEachFirstLetter($t("yes"))
+              }}</span>
+              <span v-else>
+                <slot name="ok"></slot>
+              </span>
             </w-button>
             <w-button
               size="small"
@@ -25,7 +30,12 @@
               :round="true"
               @click="hide"
             >
-              <span>{{ capitalizeEachFirstLetter($t("no")) }}</span>
+              <span v-if="!hasSlot('cancel')">{{
+                capitalizeEachFirstLetter($t("no"))
+              }}</span>
+              <span v-else>
+                <slot name="cancel"></slot>
+              </span>
             </w-button>
           </el-space>
         </el-footer>

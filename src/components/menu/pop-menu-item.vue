@@ -126,16 +126,19 @@ export default {
       });
     },
     setDestinationRoute() {
-      const to = this.menu?.to ?? {};
-      const route = to
-        ? this.$router.resolve(to)
-        : this.$router.resolve({ name: this.menuKey });
-      this.to = {
-        name: route?.name,
-      };
-      return {
-        name: route?.name,
-      };
+      const to = this.menu?.to;
+      try {
+        const route = to
+          ? this.$router.resolve(to)
+          : this.$router.resolve({ name: this.menuKey });
+        this.to = {
+          name: route?.name,
+        };
+      } catch (error) {
+        this.to = {};
+      }
+
+      return this.to;
     },
     setActiveKey() {
       if (this.activeKey == this.menuKey) {
